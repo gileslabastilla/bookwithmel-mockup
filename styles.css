@@ -41,7 +41,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
   overflow-x: hidden;
 }
@@ -121,6 +121,7 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 100px;
   font-size: 12px;
+  backdrop-filter: blur(8px);
 }
 
 .nav-container {
@@ -151,6 +152,11 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: 400;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  font-weight: 600;
 }
 
 nav .btn-primary {
@@ -165,22 +171,40 @@ nav .btn-primary {
     var(--secondary-accent)
   );
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
   color: white;
   padding: 0.25rem 0.75rem;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease;
   white-space: nowrap;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   width: max-content;
   margin: auto;
+  transition: ease 0.3s;
+  background-color: transparent;
+  color: whtie; /* fallback text color */
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover span {
+  transition: 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: ease 0.3s;
+  background-image: linear-gradient(45deg, white, white);
+}
+
+.btn-primary:hover span {
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-accent),
+    var(--secondary-accent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .btn-secondary {
@@ -196,10 +220,16 @@ nav .btn-primary {
   padding: 0.5rem 1rem;
   width: max-content;
   margin: auto;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
 .btn-secondary:hover {
   background-color: rgba(255, 255, 255, 0);
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-accent),
+    var(--secondary-accent)
+  );
   transition: ease 0.3s;
 }
 
@@ -323,7 +353,7 @@ nav .btn-primary {
   padding: 3rem 0;
 }
 #logo-strip img {
-  height: 128px;
+  height: 160px;
 }
 #gallery img {
   width: auto;
@@ -467,7 +497,7 @@ nav .btn-primary {
     to right,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0.01),
-    rgba(255, 255, 255, 0.08)
+    rgba(255, 255, 255, 0.05)
   );
   border-radius: 16px;
   text-align: left;
@@ -475,7 +505,8 @@ nav .btn-primary {
   align-items: center;
   overflow: hidden;
   padding: 2rem 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
 }
 
 .review-card .stars {
