@@ -144,6 +144,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+  white-space: nowrap;
 }
 
 nav a {
@@ -272,22 +273,25 @@ nav .btn-primary {
   background-color: white;
 }
 
-#book {
+#book,
+#about {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-#book h2 {
+#book h2,
+#about h2 {
   line-height: 3rem;
 }
 
-#book p {
+#book p,
+#about p {
   max-width: 800px;
   margin: auto;
 }
 
-#book .hashtags {
+#about .hashtags {
   display: flex;
   gap: 1rem;
   width: max-content;
@@ -498,7 +502,7 @@ nav .btn-primary {
 #gallery div.scroller-inner {
   width: max-content;
   gap: 0;
-  animation: scroll 30s linear infinite;
+  animation: scroll 60s linear infinite;
 }
 
 /* FOOTER */
